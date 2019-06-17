@@ -17,11 +17,11 @@ namespace TechLib.DataAccess.Repositories
 
         public void SaveAuthor(Author author)
         {
-            if(author.AuthorId == 0)
+            if(author.AuthorId == 0) // create
             {
                 db.Authors.Add(author);
             }
-            else
+            else // edit
             {
                 db.Entry(author).State = EntityState.Modified;
             }
