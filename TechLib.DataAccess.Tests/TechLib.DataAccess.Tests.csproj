@@ -56,12 +56,22 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Repositories\AuthorRepoTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TechLib.DataAccess\TechLib.DataAccess.csproj">
+      <Project>{321948AF-765A-43CD-B35B-008A863A71D7}</Project>
+      <Name>TechLib.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TechLib.Domain\TechLib.Domain.csproj">
+      <Project>{49F4E898-5BB0-44EE-8A36-85B730CF9182}</Project>
+      <Name>TechLib.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
