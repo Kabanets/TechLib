@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="AppDbInitializer.cs" />
     <Compile Include="Migrations\201906140747364_First Migration.cs" />
     <Compile Include="Migrations\201906140747364_First Migration.Designer.cs">
       <DependentUpon>201906140747364_First Migration.cs</DependentUpon>
