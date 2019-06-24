@@ -42,13 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Autors.cs" />
+    <Compile Include="Entities\Autor.cs" />
     <Compile Include="Entities\Book.cs" />
     <Compile Include="Entities\Reader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IAutorRepo.cs" />
-    <Compile Include="Repositories\IBookRepo.cs" />
-    <Compile Include="Repositories\IReaderRepo.cs" />
+    <Compile Include="Repositories\IAutorRepository.cs" />
+    <Compile Include="Repositories\IBookRepository.cs" />
+    <Compile Include="Repositories\IReaderRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />

@@ -3,7 +3,7 @@ using TechLib.Domain.Entities;
 
 namespace TechLib.Domain.Repositories
 {
-    public interface IReaderRepo
+    public interface IReaderRepository
     {
         IEnumerable<Reader> Readers { get; }
         void SaveReader(Reader reader);

@@ -5,11 +5,11 @@ using TechLib.Domain.Repositories;
 
 namespace TechLib.DataAccess.Repositories
 {
-    public class AuthorRepo : IAuthorRepo
+    public class AuthorRepository : IAuthorRepository
     {
         private readonly AppDbContext db;
 
-        public AuthorRepo(AppDbContext db)
+        public AuthorRepository(AppDbContext db)
         {
             this.db = db;
         }

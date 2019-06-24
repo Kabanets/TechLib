@@ -10,10 +10,10 @@ namespace TechLib.DataAccess.Tests.Repositories
     [TestClass]
     public class AuthorRepoTests
     {
-        private readonly IAuthorRepo authorRepo;
+        private readonly IAuthorRepository authorRepository;
         public AuthorRepoTests()
         {
-            authorRepo = new AuthorRepo(new AppDbContext());
+            authorRepository = new AuthorRepository(new AppDbContext());
         }
 
         [TestMethod]
@@ -25,12 +25,12 @@ namespace TechLib.DataAccess.Tests.Repositories
                 LName = "LName1"
             };
 
-            authorRepo.SaveAuthor(author);
+            authorRepository.SaveAuthor(author);
 
-            var autorCreated = authorRepo.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName1" && a.LName == "LName1");
+            var autorCreated = authorRepository.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName1" && a.LName == "LName1");
             Assert.IsNotNull(autorCreated);
 
-            authorRepo.DeleteAuthor(author.AuthorId);
+            authorRepository.DeleteAuthor(author.AuthorId);
         }
 
         [TestMethod]
@@ -42,20 +42,20 @@ namespace TechLib.DataAccess.Tests.Repositories
                 LName = "LName1"
             };
 
-            authorRepo.SaveAuthor(author);
+            authorRepository.SaveAuthor(author);
 
-            author = authorRepo.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName1");
+            author = authorRepository.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName1");
             Assert.IsNotNull(author);
 
             author.FName = "FName2";
             author.LName = "LName2";
 
-            authorRepo.SaveAuthor(author);
+            authorRepository.SaveAuthor(author);
 
-            var authorEdited = authorRepo.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName2" && a.LName == "LName2");
+            var authorEdited = authorRepository.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName2" && a.LName == "LName2");
             Assert.IsNotNull(authorEdited);
 
-            authorRepo.DeleteAuthor(author.AuthorId);
+            authorRepository.DeleteAuthor(author.AuthorId);
         }
 
         [TestMethod]
@@ -67,14 +67,14 @@ namespace TechLib.DataAccess.Tests.Repositories
                 LName = "LName1"
             };
 
-            authorRepo.SaveAuthor(author);
+            authorRepository.SaveAuthor(author);
 
-            author = authorRepo.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName1");
+            author = authorRepository.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName1");
             Assert.IsNotNull(author);
 
-            authorRepo.DeleteAuthor(author.AuthorId);
+            authorRepository.DeleteAuthor(author.AuthorId);
 
-            author = authorRepo.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName1");
+            author = authorRepository.Authors.AsQueryable().FirstOrDefault(a => a.FName == "FName1");
             Assert.IsNull(author);
         }
     }
