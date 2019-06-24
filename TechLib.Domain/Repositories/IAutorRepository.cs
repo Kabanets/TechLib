@@ -3,7 +3,7 @@ using TechLib.Domain.Entities;
 
 namespace TechLib.Domain.Repositories
 {
-    public interface IAuthorRepo
+    public interface IAuthorRepository
     {
         IEnumerable<Author> Authors { get; }
         void SaveAuthor(Author author);
